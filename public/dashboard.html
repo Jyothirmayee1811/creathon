@@ -279,7 +279,7 @@
         <div class="container">
             <h2 id="welcomeMessage" class="welcome-message"></h2> <!-- Placeholder for welcome message -->
             <h1>Empowering Neurodiverse Learners</h1>
-            <p class="lead">An AI-powered adaptive mastering platform designed for inclusive education.</p>
+            <p class="lead">An adaptive mastering platform designed for inclusive education.</p>
             <a href="#features" class="btn btn-light btn-lg">Learn More</a>
         </div>
     </section>
@@ -289,15 +289,15 @@
         <div class="container">
             <h2 class="section-heading">Platform Features</h2>
             <div class="row g-4">
-                <div class="col-md-4">
+                <div class="col-md-4" onclick="redirectToPage('adaptive.html')">
                     <div class="card p-3">
                         <div class="card-body">
-                            <h5 class="card-title">Personalized Learning</h5>
-                            <p class="card-text">Leverages AI to create unique profiles based on cognitive, sensory, and emotional responses.</p>
+                            <h5 class="card-title">Adaptive Learning</h5>
+                            <p class="card-text">Leverages  to create unique profiles based on cognitive, sensory, and emotional responses.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4" onclick="redirectToPage('real-time.html')">
                     <div class="card p-3">
                         <div class="card-body">
                             <h5 class="card-title">Real-Time Adaptability</h5>
@@ -305,7 +305,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4" onclick="redirectToPage('multi-model.html')">
                     <div class="card p-3">
                         <div class="card-body">
                             <h5 class="card-title">Multi-Modal Content</h5>
@@ -355,7 +355,7 @@
                 // Decode the token to get user information
                 const payload = JSON.parse(atob(token.split('.')[1])); // Decode JWT payload
                 const userName = payload.name; // Get the user's name from the payload
-                document.getElementById('welcomeMessage').textContent = `Hello, ${userName}!`;
+                document.getElementById('welcomeMessage').textContent =`Hello, ${userName}!`;
             } catch (error) {
                 console.error('Error decoding token:', error);
                 localStorage.removeItem('token'); // Remove invalid token
@@ -368,6 +368,12 @@
             localStorage.removeItem('token'); // Remove token from local storage
             window.location.href = '/auth.html'; // Redirect to login page
         });
+
+        function redirectToPage(page) {
+            window.location.href = page;
+        }
+
     </script>
+    <script src="https://widget.cxgenie.ai/widget.js" data-aid="818e31f6-8f07-40c6-b542-5bbe29a36bee" data-lang="en"></script>
 </body>
 </html>
